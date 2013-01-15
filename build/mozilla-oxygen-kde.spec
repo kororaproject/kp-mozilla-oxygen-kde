@@ -9,9 +9,9 @@
 %global inst_dir2 %{moz_extensions}/%{firefox_app_id}/%{src_ext_id2}
 
 Name:           mozilla-oxygen-kde
-Version:        3.9.1
-%global version2 3_9_1
-%global version3 391
+Version:        3.9.4
+%global version2 3_9_4
+%global version3 394
 Release:        1%{?dist}
 Summary:        Oxygen KDE theme for Mozilla Firefox
 
@@ -49,6 +49,9 @@ rm -rf %{buildroot}
 %{inst_dir2}.xpi
 
 %changelog
+* Tue Jan 15 2013 Chris Smart <chris@kororaa.org>- 3.9.4-1
+- Update to upstream 3.9.4 bugfix release.
+
 * Sat Jun 16 2012 Chris Smart <chris@kororaa.org>- 3.9.1-1
 - Update to upstream 3.9.1 bugfix release.
 
