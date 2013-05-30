@@ -12,7 +12,7 @@ Name:           mozilla-oxygen-kde
 Version:        4.0b2
 %global version2 4_0_b2
 %global version3 40b2
-Release:        1%{?dist}
+Release:        1%{?dist}.1
 Summary:        Oxygen KDE theme for Mozilla Firefox
 
 Group:          Applications/Internet
@@ -30,6 +30,13 @@ Oxygen KDE theme for Firefox providing nice integration with the KDE desktop.
 
 %prep
 %setup -q -c
+
+mkdir tmp && cd tmp
+unzip ../oxykdetheme.xpi
+sed -i s/em:maxVersion\>20\./em:maxVersion\>22\./g install.rdf
+zip ../oxykdetheme.xpi *
+cd -
+rm -Rf tmp
 
 %build
 
