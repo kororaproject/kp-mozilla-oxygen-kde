@@ -12,7 +12,7 @@ Name:           mozilla-oxygen-kde
 Version:        4.0b3
 %global version2 4_0_b3
 %global version3 40b3
-Release:        1%{?dist}.1
+Release:        2%{?dist}
 Summary:        Oxygen KDE theme for Mozilla Firefox
 
 Group:          Applications/Internet
@@ -33,7 +33,7 @@ Oxygen KDE theme for Firefox providing nice integration with the KDE desktop.
 
 mkdir tmp && cd tmp
 unzip ../oxykdetheme.xpi
-sed -i s/em:maxVersion\>23\./em:maxVersion\>29\./g install.rdf
+sed -i s/em:maxVersion\>23\./em:maxVersion\>28\./g install.rdf
 zip ../oxykdetheme.xpi *
 cd -
 rm -Rf tmp
@@ -56,6 +56,9 @@ rm -rf %{buildroot}
 %{inst_dir2}.xpi
 
 %changelog
+* Fri May 2 2014 Chris Smart <csmart@kororaproject.org>- 4.0b3-2
+- Disable support for Firefox 29 as it is not compatible.
+
 * Sat Sep 21 2013 Chris Smart <csmart@kororaproject.org>- 4.0b3-1
 - Update to upstream 4.0b3 release.
 
